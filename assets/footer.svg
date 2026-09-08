@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 110" width="100%" height="100%">
+  <defs>
+    <linearGradient id="footerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#0d111d" />
+    </linearGradient>
+
+    <linearGradient id="footerGlassBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#9d4edd" stop-opacity="0.5" />
+    </linearGradient>
+
+    <filter id="fGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes greenPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+    .pulse-dot { animation: greenPulse 2s ease-in-out infinite; transform-origin: 45px 55px; }
+  </style>
+
+  <!-- Container -->
+  <rect x="5" y="5" width="910" height="100" rx="16" fill="url(#footerBg)" stroke="url(#footerGlassBorder)" stroke-width="1.5" />
+
+  <!-- Status Light & Text -->
+  <circle cx="45" cy="55" r="5" fill="#10b981" class="pulse-dot" filter="url(#fGlow)" />
+  <circle cx="45" cy="55" r="2" fill="#ffffff" />
+
+  <!-- Main Status Line -->
+  <text x="68" y="48" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" letter-spacing="0.5">
+    SYSTEM PROTOCOL: <tspan fill="#00f2fe">ACTIVE</tspan> | OPEN FOR COLLABORATIONS &amp; AI RESEARCH
+  </text>
+  <text x="68" y="72" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="11.5">
+    "Transforming complex high-dimensional latent space into tangible real-world intelligence."
+  </text>
+
+  <!-- Right side badge / info -->
+  <g transform="translate(730, 40)">
+    <rect width="145" height="30" rx="8" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1" />
+    <text x="72" y="19" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      ✨ 2026 // v3.0
+    </text>
+  </g>
+</svg>
